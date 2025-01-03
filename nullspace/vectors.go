@@ -5,11 +5,25 @@ import (
 	"fmt"
 )
 
+//Swaps the row and colum indices of matrix a 
+func Transpose(a [][]int)[][]int{
+	
+	rowsA := len(a)
+	colsA := len(a[0])
+	result := MakeMatrix(colsA, rowsA)
+
+    for i := 0; i < rowsA; i++ {
+        for j := 0; j < colsA; j++ {
+           result[j][i] = a[i][j]
+        } 
+    }
+    return result
+}
 
 // Performs matrix multiplication
 // The left matrix transforms each column vector in the right matrix
 // Outputting a new basis / transform combining the two
-func matrixMultiplication(a, b [][]int) ([][]int, error) {
+func MatrixMultiplication(a, b [][]int) ([][]int, error) {
 	// Get dimensions
 	rowsA := len(a)
 	colsA := len(a[0])
