@@ -1,0 +1,59 @@
+TODO to Scalars Vectors and matrices
+
+SCALARS
+Basic arithmetic: addition, subtraction, multiplication, division.
+
+VECTORS
+Addition and subtraction
+Scalar multiplication
+dot product
+Euclidian norm
+Lp norm 
+Normalization
+
+MATRICES
+Addition and subtraction
+Scalar multiplication
+Matrix multiplication
+Transpose
+Determinant
+Inverse
+
+SPECIAL OPERATIONS
+Outer product
+Trace
+Fromenius norm
+
+PROPERTIES -------------
+
+SCALARS
+Commutativity
+Associativity
+Distributivity
+
+VECTORS
+Dot product commutativity
+Distributive property of the dot product
+Cauchy-Schwarz inequality
+Triangle inequality
+
+MATRICES
+Transpose of a transpose
+Distributive property of a transpose
+Trospose of a product
+Matrix multiplication associativity
+Matrix multiplication distributivity
+Identity matrix
+Inverse of a product
+
+SPECIAL PROPERTES
+Synnetry: A = AT for symmetric matrices
+Orthogonality: AAT = I for orthogonal matrices
+Frobenius norm invariance under transpose
+Block diagonal matrices
+- Addition of block diagonals remain block diagonal
+- Inverse of a blco diagonal is the inverse of each block
+
+
+
+
