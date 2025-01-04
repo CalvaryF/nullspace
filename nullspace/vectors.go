@@ -6,24 +6,59 @@ import (
 )
 
 //Swaps the row and colum indices of matrix a 
-func Transpose(a [][]int)[][]int{
-	
-	rowsA := len(a)
-	colsA := len(a[0])
-	result := MakeMatrix(colsA, rowsA)
+func Transpose(a [][]int)([][]int, error){
+    
+    if err := checkMatrixNotNil(a); err != nil {
+        return nil, err
+    }
+    if err := checkMatrixNotEmpty(a); err != nil {
+        return nil, err
+    }
+    if err := checkMatrixRectangular(a); err != nil {
+        return nil, err
+    }
 
-    for i := 0; i < rowsA; i++ {
-        for j := 0; j < colsA; j++ {
+
+	rows := len(a)
+	cols := len(a[0])
+	result := MakeMatrix(cols, rows)
+
+    for i := 0; i < rows; i++ {
+        for j := 0; j < cols; j++ {
            result[j][i] = a[i][j]
         } 
     }
-    return result
+    return result, nil
 }
 
 // Performs matrix multiplication
 // The left matrix transforms each column vector in the right matrix
 // Outputting a new basis / transform combining the two
 func MatrixMultiplication(a, b [][]int) ([][]int, error) {
+
+     if err := checkMatrixNotNil(a); err != nil {
+        return nil, err
+    }
+    if err := checkMatrixNotNil(b); err != nil {
+        return nil, err
+    }
+    if err := checkMatrixNotEmpty(a); err != nil {
+        return nil, err
+    }
+    if err := checkMatrixNotEmpty(b); err != nil {
+        return nil, err
+    }
+    if err := checkMatrixRectangular(a); err != nil {
+        return nil, err
+    }
+    if err := checkMatrixRectangular(b); err != nil {
+        return nil, err
+    }
+    if err := checkMatrixMultiplicationDims(a, b); err != nil {
+        return nil, err
+    }
+
+
 	// Get dimensions
 	rowsA := len(a)
 	colsA := len(a[0])
